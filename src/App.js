@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import DrumPad from './components/DrumPad';
+import DrumPad from './asd/DrumPad';
 import BUTTONS_DATA from './constants/BUTTONS_DATA';
-import Display from './components/Display';
+import Display from './asd/Display';
 import playAudio from './utils/playAudio';
 
 function App() {
