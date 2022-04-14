@@ -1,13 +1,39 @@
+import { useState } from 'react';
 import './App.css';
-import './Components/DrumPad.js'
+import DrumPad from './components/DrumPad';
+import BUTTONS_DATA from './constants/BUTTONS_DATA';
+import Display from './components/Display';
+import playAudio from './utils/playAudio';
 
 function App() {
+  const [playingPadName, setPlayingPadName] = useState("-----");
+
+  const onClick = (letter, id) => {
+    playAudio(letter);
+    setPlayingPadName((prevName) => id);
+  }
+
+  const onEnded = (event) => {
+    let letter = event.target.id;
+    let name = BUTTONS_DATA.find(button => button.buttonLetter === letter).soundName;
+
+    setPlayingPadName((prevName) => 
+      name === prevName ? "-----" : prevName
+    );
+  }
+
   return (
     <div className="App">
-      <DrumPad />
-      <DrumPad />
-      <DrumPad />
-      <DrumPad />
+      {BUTTONS_DATA.map((button) =>
+        <DrumPad
+          key={button.buttonLetter}
+          letter={button.buttonLetter}
+          id={button.soundName}
+          url={button.soundUrl}
+          onClick={onClick}
+          onEnded={onEnded}
+        />)}
+      <Display playingPadName={playingPadName} />
     </div>
   );
 }
