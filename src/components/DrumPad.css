@@ -12,3 +12,9 @@
     font-family: 'OCR A Std';
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
+
+.isPressed{
+    background-color: orange;
+    width: 20%;
+    transition: width 1s,background-color 0.4s;
+  }

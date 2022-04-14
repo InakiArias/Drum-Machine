@@ -1,0 +1,10 @@
+#drum-machine {
+    margin-right: auto; /* 1 */
+    margin-top: 1.5vh;
+    margin-left: auto; /* 1 */
+    opacity: 1 !important;
+    max-width: 80%; /* 2 */
+    text-align: justify;
+    word-wrap: break-word;
+    cursor: pointer;
+  }
